@@ -8,97 +8,72 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-
     <header>
-        <img src="imagens/logo.png" alt="Logo Cidade Karine" class="logo">
         <h1>Cidade Karine</h1>
-        <p>Orgulho de viver aqui 💙</p>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#historia">História</a></li>
+                <li><a href="#pontos">Pontos Turísticos</a></li>
+                <li><a href="#cultura">Cultura</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#noticias">Notícias</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#galeria">Galeria</a></li>
-            <li><a href="#contato">Contato</a></li>
+    <section id="inicio">
+        <h2>Bem-vindo(a) à Cidade Karine</h2>
+        <p>Uma cidade repleta de charme, natureza e histórias incríveis. Explore cada canto e descubra o que faz deste lugar tão especial!</p>
+        <button id="explorar-btn">Explorar</button>
+    </section>
+
+    <section id="historia">
+        <h2>História</h2>
+        <p>A Cidade Karine foi fundada com o propósito de unir tradição e modernidade. Ao longo dos anos, cresceu mantendo seu espírito acolhedor e vibrante.</p>
+        <p>Hoje, é reconhecida por seu desenvolvimento sustentável e cultura viva.</p>
+    </section>
+
+    <section id="pontos">
+        <h2>Pontos Turísticos</h2>
+        <ul class="cards">
+            <li class="card">Praça Central</li>
+            <li class="card">Museu da Cidade</li>
+            <li class="card">Parque da Natureza</li>
+            <li class="card">Centro Cultural</li>
         </ul>
-    </nav>
-
-    <section id="sobre">
-        <h2>Sobre a Cidade</h2>
-        <p>Bem-vindo à Cidade Karine! Um lugar cheio de oportunidades, natureza e gente acolhedora. Aqui, tradição e inovação caminham juntas para construir um futuro melhor.</p>
-        <img src="imagens/prefeitura.jpg" alt="Prefeitura" class="banner">
     </section>
 
-    <section id="noticias">
-        <h2>Notícias da Cidade</h2>
-        <div class="noticias-grid">
-            <article>
-                <h3>Nova praça inaugurada</h3>
-                <p>A prefeitura entregou uma nova praça no centro da cidade, com áreas de lazer e pista de caminhada.</p>
-            </article>
-            <article>
-                <h3>Campanha de vacinação</h3>
-                <p>Idosos acima de 60 anos podem se vacinar gratuitamente no posto central até o dia 10 de novembro.</p>
-            </article>
-            <article>
-                <h3>Educação em alta</h3>
-                <p>As escolas municipais foram premiadas por desempenho acima da média nacional no ENEM.</p>
-            </article>
-        </div>
-    </section>
-
-    <section id="servicos">
-        <h2>Serviços ao Cidadão</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Iluminação Pública</h3>
-                <p>Reporte problemas de iluminação ou solicite manutenção.</p>
-            </div>
-            <div class="card">
-                <h3>Limpeza Urbana</h3>
-                <p>Solicite coleta de entulhos ou limpeza de vias públicas.</p>
-            </div>
-            <div class="card">
-                <h3>Saúde</h3>
-                <p>Encontre postos de atendimento e agende consultas.</p>
-            </div>
-            <div class="card">
-                <h3>Educação</h3>
-                <p>Informações sobre matrículas, escolas e cursos gratuitos.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="galeria">
-        <h2>Galeria de Fotos</h2>
-        <div class="galeria-grid">
-            <img src="imagens/cidade1.jpg" alt="Praça Central">
-            <img src="imagens/cidade2.jpg" alt="Parque">
-            <img src="imagens/cidade3.jpg" alt="Centro Histórico">
+    <section id="cultura">
+        <h2>Cultura e Eventos</h2>
+        <p>A cidade celebra diversos festivais, feiras gastronômicas e eventos artísticos durante todo o ano.</p>
+        <button id="ver-eventos">Ver Próximos Eventos</button>
+        <div id="lista-eventos" class="oculto">
+            <ul>
+                <li>Festival da Primavera — Setembro</li>
+                <li>Feira do Artesanato — Outubro</li>
+                <li>Festival Gastronômico — Novembro</li>
+            </ul>
         </div>
     </section>
 
     <section id="contato">
         <h2>Fale Conosco</h2>
         <form id="form-contato">
-            <input type="text" id="nome" placeholder="Seu nome" required>
-            <input type="email" id="email" placeholder="Seu e-mail" required>
-            <textarea id="mensagem" placeholder="Digite sua mensagem..." rows="5" required></textarea>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" required></textarea>
+
             <button type="submit">Enviar</button>
-            <p id="resposta"></p>
         </form>
     </section>
 
     <footer>
-        <p>© 2025 Cidade Karine — Todos os direitos reservados 💙</p>
-        <div class="redes">
-            <a href="#">Facebook</a> |
-            <a href="#">Instagram</a> |
-            <a href="#">Twitter</a>
-        </div>
+        <p>© 2025 Cidade Karine — Todos os direitos reservados.</p>
     </footer>
-
 </body>
 </html>
