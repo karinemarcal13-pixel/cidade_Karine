@@ -13,5 +13,5 @@ document.getElementById('form-contato').addEventListener('submit', function(e) {
     } else {
         resposta.textContent = 'Por favor, preencha todos os campos.';
         resposta.style.color = 'red';
-    }
+    } 
 });
