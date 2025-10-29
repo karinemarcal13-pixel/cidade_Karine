@@ -1,184 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CiddApp — Atendimento Municipal</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="estilo.css">
-<link rel="stylesheet" href="estilo.css">
-
-  <link rel="icon" href="logo.jpeg" type="image/jpeg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidade Karine</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container bar">
-      <div class="brand">
-        <div class="brand__logo">
-          <img src="logo.jpeg" alt="Logo da CiddApp">
+    <header>
+        <img src="imagens/logo.png" alt="Logo Cidade Karine" class="logo">
+        <h1>Cidade Karine</h1>
+        <p>Conectando cidadãos e serviços públicos</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <section id="sobre">
+        <h2>Sobre</h2>
+        <p>A Cidade Karine é um portal informativo e interativo que aproxima os cidadãos dos serviços públicos municipais. Aqui você encontra informações, solicitações e notícias sobre a nossa cidade.</p>
+    </section>
+
+    <section id="servicos">
+        <h2>Serviços</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Iluminação Pública</h3>
+                <p>Reporte problemas de iluminação em ruas e praças.</p>
+            </div>
+            <div class="card">
+                <h3>Limpeza Urbana</h3>
+                <p>Solicite varrição, coleta de lixo e manutenção de praças.</p>
+            </div>
+            <div class="card">
+                <h3>Obras e Vias</h3>
+                <p>Acompanhe obras e melhorias na infraestrutura da cidade.</p>
+            </div>
         </div>
-        <div>
-          <div class="brand__title">CiddApp</div>
-          <div class="brand__subtitle">Atendimento Municipal</div>
-        </div>
-      </div>
-      <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#reclamacoes">Reclamações</a>
-        <a href="#solicitacoes">Solicitações</a>
-        <a href="#doacoes">Doações</a>
-        <a href="#localizacao">Localização</a>
-        <div class="ctas">
-          <a href="#login" class="btn btn--outline">Login</a>
-        </div>
-      </nav>
-    </div>
-  </header>
+    </section>
 
-  <!-- Hero -->
-  <section id="home" class="hero container">
-    <div class="hero__card animated-fade">
-      <h1>Atendimento Rápido e Fácil</h1>
-      <p>Resolva suas solicitações sem sair de casa. Atendimento digital para todo o município.</p>
-      <a href="#solicitacoes" class="btn btn--primary">Fazer Solicitação</a>
-    </div>
-    <div>
-      <img src="hero-image.png" alt="Atendimento Municipal" />
-    </div>
-  </section>
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <form id="form-contato">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
 
-  <!-- Sobre -->
-  <section id="sobre" class="container mt-lg">
-    <h2 class="title--decor">Sobre Nós</h2>
-    <p class="lead">O portal de atendimento municipal tem como objetivo modernizar os serviços públicos, trazendo praticidade e eficiência para os cidadãos.</p>
-  </section>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
 
-  <!-- Serviços -->
-  <section id="servicos" class="container mt-lg">
-    <h2 class="title--decor">Serviços</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="card__title">Iluminação Pública</div>
-        <p class="card__desc">Solicite reparos e manutenções na iluminação de ruas e praças.</p>
-      </div>
-      <div class="card">
-        <div class="card__title">Coleta de Lixo</div>
-        <p class="card__desc">Acompanhe o calendário de coleta e registre problemas.</p>
-      </div>
-      <div class="card">
-        <div class="card__title">Obras Públicas</div>
-        <p class="card__desc">Peça informações ou registre reclamações sobre obras em andamento.</p>
-      </div>
-    </div>
-  </section>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
 
-  <!-- Reclamações -->
-  <section id="reclamacoes" class="container mt-lg">
-    <h2 class="title--decor">Reclamações</h2>
-    <p class="lead">Espaço para registrar reclamações relacionadas aos serviços municipais.</p>
-    <form class="form">
-      <label for="reclamacao">Descrição</label>
-      <textarea id="reclamacao" placeholder="Digite sua reclamação"></textarea>
-      <button type="submit" class="btn btn--primary">Enviar Reclamação</button>
-    </form>
-  </section>
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="resposta"></p>
+    </section>
 
-  <!-- Solicitações -->
-  <section id="solicitacoes" class="container mt-lg">
-    <h2 class="title--decor">Solicitações</h2>
-    <form class="form">
-      <div class="row">
-        <div class="stack">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" class="input" placeholder="Seu nome" />
-        </div>
-        <div class="stack">
-          <label for="email">Email</label>
-          <input type="email" id="email" class="input" placeholder="Seu email" />
-        </div>
-      </div>
-      <div class="stack">
-        <label for="categoria">Categoria</label>
-        <select id="categoria" class="input">
-          <option value="">Selecione</option>
-          <option value="iluminacao">Iluminação</option>
-          <option value="limpeza">Limpeza Urbana</option>
-          <option value="obras">Obras</option>
-        </select>
-      </div>
-      <div class="stack">
-        <label for="descricao">Descrição</label>
-        <textarea id="descricao" class="input" placeholder="Detalhe sua solicitação"></textarea>
-      </div>
-      <button type="submit" class="btn btn--primary">Enviar Solicitação</button>
-    </form>
-  </section>
-
-  <!-- Doações -->
-  <section id="doacoes" class="container mt-lg">
-    <div class="cta-banner">
-      <div class="cta-text">Ajude projetos sociais da cidade</div>
-      <a href="#" class="btn btn--outline">Fazer Doação</a>
-    </div>
-  </section>
-
-  <!-- Localização -->
-  <section id="localizacao" class="container mt-lg">
-    <h2 class="title--decor">Localização</h2>
-    <div class="map">
-      <iframe
-        src="https://maps.google.com/maps?q=Prefeitura%20Municipal&t=&z=15&ie=UTF8&iwloc=&output=embed"
-        width="100%" height="300" style="border:0;"
-        allowfullscreen="" loading="lazy"></iframe>
-    </div>
-  </section>
-
-  <!-- Login -->
-  <section id="login" class="container mt-lg">
-    <div class="login">
-      <h2>Área Restrita</h2>
-      <p class="small">Entre com suas credenciais</p>
-      <form class="form">
-        <div class="stack">
-          <label for="usuario">Usuário</label>
-          <input type="text" id="usuario" class="input" placeholder="Digite seu usuário" />
-        </div>
-        <div class="stack">
-          <label for="senha">Senha</label>
-          <input type="password" id="senha" class="input" placeholder="Digite sua senha" />
-        </div>
-        <button type="submit" class="btn btn--primary">Entrar</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer__cols">
-      <div>
-        <h3>Prefeitura</h3>
-        <p>Atendimento online para facilitar sua vida.</p>
-      </div>
-      <div>
-        <h3>Links Úteis</h3>
-        <p><a href="#servicos">Serviços</a></p>
-        <p><a href="#solicitacoes">Solicitações</a></p>
-        <p><a href="#reclamacoes">Reclamações</a></p>
-      </div>
-      <div>
-        <h3>Contato</h3>
-        <p>Email: atendimento@ciddapp.gov</p>
-        <p>Telefone: (11) 1234‑5678</p>
-      </div>
-    </div>
-  </footer>
-  <script src="script.js"></script>
-  <section class="container mt-lg">
-  <h2 class="title--decor">📋 Reclamações Recebidas</h2>
-  <ul id="lista-reclamacoes"></ul>
-</section>
+    <footer>
+        <p>© 2025 Cidade Karine — Todos os direitos reservados</p>
+    </footer>
 </body>
 </html>
