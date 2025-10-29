@@ -1,79 +1,144 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cidade Karine</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cidade Karine</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Cidade Karine</h1>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#historia">História</a></li>
-                <li><a href="#pontos">Pontos Turísticos</a></li>
-                <li><a href="#cultura">Cultura</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>Cidade Karine</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#historia">História</a></li>
+        <li><a href="#pontos">Pontos Turísticos</a></li>
+        <li><a href="#cultura">Cultura</a></li>
+        <li><a href="#localizacao">Localização</a></li>
+        <li><a href="#doacoes">Doações</a></li>
+        <li><a href="#reclamacoes">Reclamações</a></li>
+        <li><a href="#agendamento">Agendamento Médico</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="inicio">
-        <h2>Bem-vindo(a) à Cidade Karine</h2>
-        <p>Uma cidade repleta de charme, natureza e histórias incríveis. Explore cada canto e descubra o que faz deste lugar tão especial!</p>
-        <button id="explorar-btn">Explorar</button>
-    </section>
+  <section id="inicio">
+    <h2>Bem-vindo(a) à Cidade Karine 🌆</h2>
+    <p>Uma cidade viva, acolhedora e moderna — feita para cuidar das pessoas e celebrar a vida.</p>
+    <button id="explorar-btn">Explorar</button>
+  </section>
 
-    <section id="historia">
-        <h2>História</h2>
-        <p>A Cidade Karine foi fundada com o propósito de unir tradição e modernidade. Ao longo dos anos, cresceu mantendo seu espírito acolhedor e vibrante.</p>
-        <p>Hoje, é reconhecida por seu desenvolvimento sustentável e cultura viva.</p>
-    </section>
+  <section id="historia">
+    <h2>História</h2>
+    <p>A Cidade Karine foi fundada para unir o desenvolvimento urbano com o bem-estar social. Hoje, é um exemplo de inovação e sustentabilidade no Brasil.</p>
+  </section>
 
-    <section id="pontos">
-        <h2>Pontos Turísticos</h2>
-        <ul class="cards">
-            <li class="card">Praça Central</li>
-            <li class="card">Museu da Cidade</li>
-            <li class="card">Parque da Natureza</li>
-            <li class="card">Centro Cultural</li>
-        </ul>
-    </section>
+  <section id="pontos">
+    <h2>Pontos Turísticos</h2>
+    <ul class="cards">
+      <li class="card">Praça Central</li>
+      <li class="card">Museu Cultural</li>
+      <li class="card">Parque da Vida</li>
+      <li class="card">Centro de Eventos</li>
+    </ul>
+  </section>
 
-    <section id="cultura">
-        <h2>Cultura e Eventos</h2>
-        <p>A cidade celebra diversos festivais, feiras gastronômicas e eventos artísticos durante todo o ano.</p>
-        <button id="ver-eventos">Ver Próximos Eventos</button>
-        <div id="lista-eventos" class="oculto">
-            <ul>
-                <li>Festival da Primavera — Setembro</li>
-                <li>Feira do Artesanato — Outubro</li>
-                <li>Festival Gastronômico — Novembro</li>
-            </ul>
-        </div>
-    </section>
+  <section id="cultura">
+    <h2>Cultura e Eventos</h2>
+    <p>Festivais, feiras e arte fazem parte do dia a dia da Cidade Karine. Confira nossa agenda cultural!</p>
+    <button id="ver-eventos">Ver Próximos Eventos</button>
+    <div id="lista-eventos" class="oculto">
+      <ul>
+        <li>Festival da Primavera — Setembro</li>
+        <li>Feira de Artesanato — Outubro</li>
+        <li>Festival Gastronômico — Novembro</li>
+      </ul>
+    </div>
+  </section>
 
-    <section id="contato">
-        <h2>Fale Conosco</h2>
-        <form id="form-contato">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" required>
+  <section id="localizacao">
+    <h2>Localização</h2>
+    <p>A Cidade Karine está situada no coração do Brasil 🌍</p>
+    <p>📍 Avenida Central, 1000 – Centro, Cidade Karine, BR</p>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.495258091001!2d-46.65588168501953!3d-23.586245984669567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59b35b3bfb6f%3A0x74b557b7f266b00b!2sAv.%20Paulista!5e0!3m2!1spt-BR!2sbr!4v1675189012345!5m2!1spt-BR!2sbr"
+      width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
+  <section id="doacoes">
+    <h2>Doações 💖</h2>
+    <p>Contribua com nossos projetos sociais, educacionais e de saúde.</p>
+    <form id="form-doacao">
+      <label for="nome-doacao">Nome:</label>
+      <input type="text" id="nome-doacao" required>
 
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" required></textarea>
+      <label for="valor-doacao">Valor (R$):</label>
+      <input type="number" id="valor-doacao" required>
 
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+      <button type="submit">Enviar Doação</button>
+    </form>
+  </section>
 
-    <footer>
-        <p>© 2025 Cidade Karine — Todos os direitos reservados.</p>
-    </footer>
+  <section id="reclamacoes">
+    <h2>Reclamações 📢</h2>
+    <p>Nos ajude a melhorar! Envie sua reclamação abaixo:</p>
+    <form id="form-reclamacao">
+      <label for="nome-reclamacao">Nome:</label>
+      <input type="text" id="nome-reclamacao" required>
+
+      <label for="mensagem-reclamacao">Mensagem:</label>
+      <textarea id="mensagem-reclamacao" required></textarea>
+
+      <button type="submit">Enviar Reclamação</button>
+    </form>
+  </section>
+
+  <section id="agendamento">
+    <h2>Agendamento Médico 🩺</h2>
+    <p>Agende sua consulta gratuita oferecida pela prefeitura.</p>
+    <form id="form-agendamento">
+      <label for="nome-paciente">Nome do Paciente:</label>
+      <input type="text" id="nome-paciente" required>
+
+      <label for="especialidade">Especialidade:</label>
+      <select id="especialidade" required>
+        <option value="">Selecione</option>
+        <option value="clinico">Clínico Geral</option>
+        <option value="pediatria">Pediatria</option>
+        <option value="odontologia">Odontologia</option>
+        <option value="ginecologia">Ginecologia</option>
+      </select>
+
+      <label for="data">Data:</label>
+      <input type="date" id="data" required>
+
+      <button type="submit">Agendar Consulta</button>
+    </form>
+  </section>
+
+  <section id="contato">
+    <h2>Contato ☎️</h2>
+    <p><strong>Telefone da Prefeitura:</strong> (11) 4002-8922</p>
+    <p>Atendimento: Segunda a Sexta, das 8h às 18h</p>
+    <form id="form-contato">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Cidade Karine — Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
