@@ -1,70 +1,104 @@
 <!DOCTYPE html>
-<html lang="pt-BR"> 
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cidade Karine</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
-    <img src="logo.jpeg" alt="Logo Cidade Karine">
 </head>
 <body>
+
     <header>
         <img src="imagens/logo.png" alt="Logo Cidade Karine" class="logo">
         <h1>Cidade Karine</h1>
-        <p>Conectando cidadãos e serviços públicos</p>
+        <p>Orgulho de viver aqui 💙</p>
     </header>
 
     <nav>
         <ul>
             <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#noticias">Notícias</a></li>
             <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#galeria">Galeria</a></li>
             <li><a href="#contato">Contato</a></li>
         </ul>
     </nav>
 
     <section id="sobre">
-        <h2>Sobre</h2>
-        <p>A Cidade Karine é um portal informativo e interativo que aproxima os cidadãos dos serviços públicos municipais. Aqui você encontra informações, solicitações e notícias sobre a nossa cidade.</p>
+        <h2>Sobre a Cidade</h2>
+        <p>Bem-vindo à Cidade Karine! Um lugar cheio de oportunidades, natureza e gente acolhedora. Aqui, tradição e inovação caminham juntas para construir um futuro melhor.</p>
+        <img src="imagens/prefeitura.jpg" alt="Prefeitura" class="banner">
+    </section>
+
+    <section id="noticias">
+        <h2>Notícias da Cidade</h2>
+        <div class="noticias-grid">
+            <article>
+                <h3>Nova praça inaugurada</h3>
+                <p>A prefeitura entregou uma nova praça no centro da cidade, com áreas de lazer e pista de caminhada.</p>
+            </article>
+            <article>
+                <h3>Campanha de vacinação</h3>
+                <p>Idosos acima de 60 anos podem se vacinar gratuitamente no posto central até o dia 10 de novembro.</p>
+            </article>
+            <article>
+                <h3>Educação em alta</h3>
+                <p>As escolas municipais foram premiadas por desempenho acima da média nacional no ENEM.</p>
+            </article>
+        </div>
     </section>
 
     <section id="servicos">
-        <h2>Serviços</h2>
+        <h2>Serviços ao Cidadão</h2>
         <div class="cards">
             <div class="card">
                 <h3>Iluminação Pública</h3>
-                <p>Reporte problemas de iluminação em ruas e praças.</p>
+                <p>Reporte problemas de iluminação ou solicite manutenção.</p>
             </div>
             <div class="card">
                 <h3>Limpeza Urbana</h3>
-                <p>Solicite varrição, coleta de lixo e manutenção de praças.</p>
+                <p>Solicite coleta de entulhos ou limpeza de vias públicas.</p>
             </div>
             <div class="card">
-                <h3>Obras e Vias</h3>
-                <p>Acompanhe obras e melhorias na infraestrutura da cidade.</p>
+                <h3>Saúde</h3>
+                <p>Encontre postos de atendimento e agende consultas.</p>
+            </div>
+            <div class="card">
+                <h3>Educação</h3>
+                <p>Informações sobre matrículas, escolas e cursos gratuitos.</p>
             </div>
         </div>
     </section>
 
+    <section id="galeria">
+        <h2>Galeria de Fotos</h2>
+        <div class="galeria-grid">
+            <img src="imagens/cidade1.jpg" alt="Praça Central">
+            <img src="imagens/cidade2.jpg" alt="Parque">
+            <img src="imagens/cidade3.jpg" alt="Centro Histórico">
+        </div>
+    </section>
+
     <section id="contato">
-        <h2>Entre em Contato</h2>
+        <h2>Fale Conosco</h2>
         <form id="form-contato">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-
+            <input type="text" id="nome" placeholder="Seu nome" required>
+            <input type="email" id="email" placeholder="Seu e-mail" required>
+            <textarea id="mensagem" placeholder="Digite sua mensagem..." rows="5" required></textarea>
             <button type="submit">Enviar</button>
+            <p id="resposta"></p>
         </form>
-        <p id="resposta"></p>
     </section>
 
     <footer>
-        <p>© 2025 Cidade Karine — Todos os direitos reservados</p>
+        <p>© 2025 Cidade Karine — Todos os direitos reservados 💙</p>
+        <div class="redes">
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">Twitter</a>
+        </div>
     </footer>
+
 </body>
 </html>

@@ -4,5 +4,10 @@ cidade_Karine/
 ├── style.css
 ├── script.js
 └── imagens/
-    └── logo.png
+    ├── logo.png
+    ├── prefeitura.jpg
+    ├── cidade1.jpg
+    ├── cidade2.jpg
+    ├── cidade3.jpg
+
 
