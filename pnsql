@@ -1,13 +1,18 @@
-ciddApp/
+ciddapp/
 │
-├── index.html
-├── style.css
-├── script.js
-└── imagens/
-    ├── logo.png
-    ├── cidade1.jpg
-    ├── cidade2.jpg
-    ├── cidade3.jpg
+├── index.html          ← página principal do site
+├── style.css           ← arquivo de estilos
+├── script.js           ← lógica do site
+│
+├── database/
+│   └── ciddapp.sql     ← script do banco de dados (o que te enviei)
+│
+├── assets/
+│   ├── images/         ← (opcional) imagens da cidade, ícones etc.
+│   └── icons/          ← (opcional) ícones SVG ou PNG
+│
+└── README.md           ← (opcional) descrição do projeto
+
 
 
 

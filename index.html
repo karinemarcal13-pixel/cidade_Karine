@@ -3,139 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CiddApp</title>
+  <title>CiddApp — Conectando Cidadãos e Cidade</title>
+  <meta name="description" content="CiddApp é a plataforma oficial da cidade — acesse informações sobre turismo, cultura, saúde e serviços públicos.">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <h1>CiddApp</h1>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#historia">História</a></li>
-        <li><a href="#pontos">Pontos Turísticos</a></li>
-        <li><a href="#cultura">Cultura</a></li>
-        <li><a href="#localizacao">Localização</a></li>
-        <li><a href="#doacoes">Doações</a></li>
-        <li><a href="#reclamacoes">Reclamações</a></li>
-        <li><a href="#agendamento">Agendamento Médico</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <h1>CiddApp</h1>
+      <nav aria-label="Menu principal">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#historia">História</a></li>
+          <li><a href="#pontos">Pontos Turísticos</a></li>
+          <li><a href="#cultura">Cultura</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+          <li><a href="#doacoes">Doações</a></li>
+          <li><a href="#reclamacoes">Reclamações</a></li>
+          <li><a href="#agendamento">Agendamento Médico</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section id="inicio">
-    <h2>Bem-vindo(a) à CiddApp 🌆</h2>
-    <p>Uma cidade viva, acolhedora e moderna — feita para cuidar das pessoas e celebrar a vida.</p>
-    <button id="explorar-btn">Explorar</button>
-  </section>
+  <main>
+    <section id="inicio" class="hero">
+      <h2>Bem-vindo(a) à CiddApp 🌆</h2>
+      <p>Uma cidade viva, acolhedora e moderna — feita para cuidar das pessoas e celebrar a vida.</p>
+      <button id="explorar-btn" aria-label="Explorar CiddApp">Explorar</button>
+    </section>
 
-  <section id="historia">
-    <h2>História</h2>
-    <p>O CiddApp foi fundado para unir o desenvolvimento urbano com o bem-estar social. Hoje, é um exemplo de inovação e sustentabilidade no Brasil.</p>
-  </section>
+    <section id="historia">
+      <h2>História</h2>
+      <p>A CiddApp foi criada para unir o desenvolvimento urbano com o bem-estar social. Hoje, é um exemplo de inovação, sustentabilidade e cidadania digital no Brasil.</p>
+    </section>
 
-  <section id="pontos">
-    <h2>Pontos Turísticos</h2>
-    <ul class="cards">
-      <li class="card">Praça Central</li>
-      <li class="card">Museu Cultural</li>
-      <li class="card">Parque da Vida</li>
-      <li class="card">Centro de Eventos</li>
-    </ul>
-  </section>
-
-  <section id="cultura">
-    <h2>Cultura e Eventos</h2>
-    <p>Festivais, feiras e arte fazem parte do dia a dia da CiddApp. Confira nossa agenda cultural!</p>
-    <button id="ver-eventos">Ver Próximos Eventos</button>
-    <div id="lista-eventos" class="oculto">
-      <ul>
-        <li>Festival da Primavera — Setembro</li>
-        <li>Feira de Artesanato — Outubro</li>
-        <li>Festival Gastronômico — Novembro</li>
+    <section id="pontos">
+      <h2>Pontos Turísticos</h2>
+      <ul class="cards">
+        <li class="card">Praça Central</li>
+        <li class="card">Museu Cultural</li>
+        <li class="card">Parque da Vida</li>
+        <li class="card">Centro de Eventos</li>
       </ul>
-    </div>
-  </section>
+    </section>
 
-  <section id="localizacao">
-    <h2>Localização</h2>
-    <p>A CiddApp está situado no coração do Brasil 🌍</p>
-    <p>📍 Avenida Central, 1000 – Centro, Cidade dos CEEM problemas, BR</p>
-  </section>
+    <section id="cultura">
+      <h2>Cultura e Eventos</h2>
+      <p>Festivais, feiras e arte fazem parte do dia a dia da CiddApp. Confira nossa agenda cultural!</p>
+      <button id="ver-eventos" aria-expanded="false" aria-controls="lista-eventos">Ver Próximos Eventos</button>
+      <div id="lista-eventos" class="oculto" hidden>
+        <ul>
+          <li>Festival da Primavera — Setembro</li>
+          <li>Feira de Artesanato — Outubro</li>
+          <li>Festival Gastronômico — Novembro</li>
+        </ul>
+      </div>
+    </section>
 
-  <section id="doacoes">
-    <h2>Doações 💖</h2>
-    <p>Contribua com nossos projetos sociais, educacionais e de saúde.</p>
-    <form id="form-doacao">
-      <label for="nome-doacao">Nome:</label>
-      <input type="text" id="nome-doacao" required>
+    <section id="localizacao">
+      <h2>Localização</h2>
+      <p>A CiddApp está situada no coração do Brasil 🌍</p>
+      <address>
+        📍 Avenida Central, 1000 – Centro, CiddApp, BR
+      </address>
+    </section>
 
-      <label for="valor-doacao">Valor (R$):</label>
-      <input type="number" id="valor-doacao" required>
+    <section id="doacoes">
+      <h2>Doações 💖</h2>
+      <p>Contribua com nossos projetos sociais, educacionais e de saúde.</p>
+      <form id="form-doacao" aria-label="Formulário de doações">
+        <label for="nome-doacao">Nome:</label>
+        <input type="text" id="nome-doacao" name="nome" required autocomplete="name">
 
-      <button type="submit">Enviar Doação</button>
-    </form>
-  </section>
+        <label for="valor-doacao">Valor (R$):</label>
+        <input type="number" id="valor-doacao" name="valor" min="1" step="0.01" required autocomplete="off">
 
-  <section id="reclamacoes">
-    <h2>Reclamações 📢</h2>
-    <p>Nos ajude a melhorar! Envie sua reclamação abaixo:</p>
-    <form id="form-reclamacao">
-      <label for="nome-reclamacao">Nome:</label>
-      <input type="text" id="nome-reclamacao" required>
+        <button type="submit">Enviar Doação</button>
+      </form>
+    </section>
 
-      <label for="mensagem-reclamacao">Mensagem:</label>
-      <textarea id="mensagem-reclamacao" required></textarea>
+    <section id="reclamacoes">
+      <h2>Reclamações 📢</h2>
+      <p>Nos ajude a melhorar! Envie sua reclamação abaixo:</p>
+      <form id="form-reclamacao" aria-label="Formulário de reclamações">
+        <label for="nome-reclamacao">Nome:</label>
+        <input type="text" id="nome-reclamacao" name="nome" required autocomplete="name">
 
-      <button type="submit">Enviar Reclamação</button>
-    </form>
-  </section>
+        <label for="mensagem-reclamacao">Mensagem:</label>
+        <textarea id="mensagem-reclamacao" name="mensagem" rows="4" required></textarea>
 
-  <section id="agendamento">
-    <h2>Agendamento Médico 🩺</h2>
-    <p>Agende sua consulta gratuita oferecida pela prefeitura.</p>
-    <form id="form-agendamento">
-      <label for="nome-paciente">Nome do Paciente:</label>
-      <input type="text" id="nome-paciente" required>
+        <button type="submit">Enviar Reclamação</button>
+      </form>
+    </section>
 
-      <label for="especialidade">Especialidade:</label>
-      <select id="especialidade" required>
-        <option value="">Selecione</option>
-        <option value="clinico">Clínico Geral</option>
-        <option value="pediatria">Pediatria</option>
-        <option value="odontologia">Odontologia</option>
-        <option value="ginecologia">Ginecologia</option>
-      </select>
+    <section id="agendamento">
+      <h2>Agendamento Médico 🩺</h2>
+      <p>Agende sua consulta gratuita oferecida pela prefeitura.</p>
+      <form id="form-agendamento" aria-label="Formulário de agendamento médico">
+        <label for="nome-paciente">Nome do Paciente:</label>
+        <input type="text" id="nome-paciente" name="nome" required autocomplete="name">
 
-      <label for="data">Data:</label>
-      <input type="date" id="data" required>
+        <label for="especialidade">Especialidade:</label>
+        <select id="especialidade" name="especialidade" required>
+          <option value="">Selecione</option>
+          <option value="clinico">Clínico Geral</option>
+          <option value="pediatria">Pediatria</option>
+          <option value="odontologia">Odontologia</option>
+          <option value="ginecologia">Ginecologia</option>
+        </select>
 
-      <button type="submit">Agendar Consulta</button>
-    </form>
-  </section>
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" required>
 
-  <section id="contato">
-    <h2>Contato ☎️</h2>
-    <p><strong>Telefone da Prefeitura:</strong> (11) 4002-8922</p>
-    <p>Atendimento: Segunda a Sexta, das 8h às 18h</p>
-    <form id="form-contato">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" required>
+        <button type="submit">Agendar Consulta</button>
+      </form>
+    </section>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" required>
+    <section id="contato">
+      <h2>Contato ☎️</h2>
+      <p><strong>Telefone da Prefeitura:</strong> (11) 4002-8922</p>
+      <p>Atendimento: Segunda a Sexta, das 8h às 18h</p>
 
-      <label for="mensagem">Mensagem:</label>
-      <textarea id="mensagem" required></textarea>
+      <form id="form-contato" aria-label="Formulário de contato">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required autocomplete="name">
 
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 CiddApp — Todos os direitos reservados.</p>
+    <p>© 2025 <strong>CiddApp</strong> — Todos os direitos reservados.</p>
   </footer>
 </body>
 </html>

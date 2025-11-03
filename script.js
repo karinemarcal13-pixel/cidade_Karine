@@ -1,37 +1,39 @@
-// Mostrar eventos culturais
-document.getElementById("ver-eventos").addEventListener("click", () => {
-  document.getElementById("lista-eventos").classList.toggle("oculto");
+// === Rolagem suave ===
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  });
 });
 
-// Rolagem suave
-document.getElementById("explorar-btn").addEventListener("click", () => {
-  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+// === Botão explorar ===
+const explorarBtn = document.getElementById('explorar-btn');
+explorarBtn.addEventListener('click', () => {
+  document.querySelector('#historia').scrollIntoView({ behavior: 'smooth' });
 });
 
-// Doações
-document.getElementById("form-doacao").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("💖 Obrigado pela sua doação! Sua contribuição faz a diferença!");
-  e.target.reset();
+// === Ver eventos ===
+const verEventosBtn = document.getElementById('ver-eventos');
+const listaEventos = document.getElementById('lista-eventos');
+
+verEventosBtn.addEventListener('click', () => {
+  const isHidden = listaEventos.hasAttribute('hidden');
+  listaEventos.toggleAttribute('hidden');
+  verEventosBtn.textContent = isHidden ? 'Ocultar Eventos' : 'Ver Próximos Eventos';
 });
 
-// Reclamações
-document.getElementById("form-reclamacao").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("📢 Reclamação enviada com sucesso! A Prefeitura retornará em breve.");
-  e.target.reset();
-});
+// === Formulários ===
+function handleFormSubmit(formId, successMessage) {
+  const form = document.getElementById(formId);
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    alert(successMessage);
+    form.reset();
+  });
+}
 
-// Agendamento médico
-document.getElementById("form-agendamento").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("🩺 Consulta agendada com sucesso! A Prefeitura entrará em contato para confirmar.");
-  e.target.reset();
-});
-
-// Contato
-document.getElementById("form-contato").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("📬 Mensagem enviada! Responderemos o mais breve possível.");
-  e.target.reset();
-});
+handleFormSubmit('form-doacao', '💖 Obrigado pela sua doação!');
+handleFormSubmit('form-reclamacao', '📢 Reclamação enviada com sucesso!');
+handleFormSubmit('form-agendamento', '🩺 Consulta agendada com sucesso!');
+handleFormSubmit('form-contato', '📬 Mensagem enviada com sucesso!');
