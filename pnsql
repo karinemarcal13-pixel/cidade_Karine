@@ -14,5 +14,10 @@ ciddapp/
 └── README.md           ← (opcional) descrição do projeto
 
 
+/cidade_Karine/
+│
+├── index.html
+├── style.css
+└── script.js
 
 

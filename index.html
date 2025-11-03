@@ -148,3 +148,70 @@
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cidade Karine - Atendimento ao Cidadão</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Cidade Karine</h1>
+    <nav>
+      <a href="#" id="btnInicio">Início</a>
+      <a href="#" id="btnAtendimento">Atendimento ao Cidadão</a>
+      <a href="#" id="btnHistorico">Meus Protocolos</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section id="inicio" class="ativo">
+      <h2>Bem-vindo(a) à Cidade Karine 💙</h2>
+      <p>Use o sistema abaixo para registrar solicitações, reclamações e sugestões diretamente à prefeitura.</p>
+      <button id="abrirAtendimento" class="botao">Abrir Atendimento</button>
+    </section>
+
+    <section id="formulario">
+      <h2>Registrar Atendimento</h2>
+      <form id="formAtendimento">
+        <label>Nome completo:</label>
+        <input type="text" id="nome" required>
+
+        <label>Contato (telefone ou e-mail):</label>
+        <input type="text" id="contato" required>
+
+        <label>Tipo de solicitação:</label>
+        <select id="tipo" required>
+          <option value="">Selecione...</option>
+          <option value="Iluminação Pública">Iluminação Pública</option>
+          <option value="Limpeza Urbana">Limpeza Urbana</option>
+          <option value="Saúde">Saúde</option>
+          <option value="Educação">Educação</option>
+          <option value="Outro">Outro</option>
+        </select>
+
+        <label>Descrição do problema:</label>
+        <textarea id="descricao" rows="5" required></textarea>
+
+        <button type="submit" class="botao">Enviar Solicitação</button>
+        <button type="button" id="voltarInicio" class="botao secundario">Voltar</button>
+      </form>
+    </section>
+
+    <section id="historico">
+      <h2>Meus Protocolos</h2>
+      <div id="listaAtendimentos"></div>
+      <button id="voltarInicio2" class="botao secundario">Voltar</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Cidade Karine — Atendimento ao Cidadão</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
