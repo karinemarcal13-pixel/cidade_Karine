@@ -1,23 +1,51 @@
+CREATE DATABASE IF NOT EXISTS ciddapp DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE ciddapp;
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(150) NOT NULL,
+  email VARCHAR(200) NOT NULL UNIQUE,
+  password VARCHAR(200) NOT NULL,
+  role ENUM('citizen','professor','admin') DEFAULT 'citizen',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE reports (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT,
+  title VARCHAR(200),
+  description TEXT,
+  lat DECIMAL(10,7),
+  lng DECIMAL(10,7),
+  photo VARCHAR(255),
+  status ENUM('pending','in_progress','resolved') DEFAULT 'pending',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+) ENGINE=InnoDB;
+
+-- Usuário professor de exemplo (troque a senha antes de usar em produção)
+-- Insira hash de bcrypt gerado localmente; aqui está um placeholder
+INSERT INTO users (name, email, password, role) VALUES
+('Professor Exemplo', 'professor@exemplo.com', '$2b$10$EXEMPLOHASHDETESTE......', 'professor');
+
 ciddapp/
-│
-├── index.html          ← página principal do site
-├── style.css           ← arquivo de estilos
-├── script.js           ← lógica do site
-│
-├── database/
-│   └── ciddapp.sql     ← script do banco de dados (o que te enviei)
-│
-├── assets/
-│   ├── images/         ← (opcional) imagens da cidade, ícones etc.
-│   └── icons/          ← (opcional) ícones SVG ou PNG
-│
-└── README.md           ← (opcional) descrição do projeto
-
-
-/cidade_Karine/
-│
-├── index.html
-├── style.css
-└── script.js
-
+├─ backend/
+│  ├─ package.json
+│  ├─ .env.example
+│  ├─ server.js
+│  ├─ routes/
+│  │  ├─ auth.js
+│  │  └─ reports.js
+│  ├─ middleware/
+│  │  └─ auth.js
+│  ├─ uploads/        (diretório para imagens - gitignore)
+│  └─ db.sql
+└─ frontend/
+   ├─ index.html
+   ├─ login.html
+   ├─ professor.html
+   ├─ css/
+   │  └─ styles.css
+   └─ js/
+      └─ app.js
 

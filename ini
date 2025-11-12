@@ -1,0 +1,7 @@
+PORT=4000
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=suasenha
+DB_NAME=ciddapp
+JWT_SECRET=uma_chave_secreta_bem_grande
+UPLOAD_DIR=./uploads

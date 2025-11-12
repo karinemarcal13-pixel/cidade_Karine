@@ -1,209 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CiddApp — Conectando Cidadãos e Cidade</title>
-  <meta name="description" content="CiddApp é a plataforma oficial da cidade — acesse informações sobre turismo, cultura, saúde e serviços públicos.">
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CiddApp - Registrar Ocorrência</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>CiddApp</h1>
-      <nav aria-label="Menu principal">
-        <ul>
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#historia">História</a></li>
-          <li><a href="#pontos">Pontos Turísticos</a></li>
-          <li><a href="#cultura">Cultura</a></li>
-          <li><a href="#localizacao">Localização</a></li>
-          <li><a href="#doacoes">Doações</a></li>
-          <li><a href="#reclamacoes">Reclamações</a></li>
-          <li><a href="#agendamento">Agendamento Médico</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section id="inicio" class="hero">
-      <h2>Bem-vindo(a) à CiddApp 🌆</h2>
-      <p>Uma cidade viva, acolhedora e moderna — feita para cuidar das pessoas e celebrar a vida.</p>
-      <button id="explorar-btn" aria-label="Explorar CiddApp">Explorar</button>
-    </section>
-
-    <section id="historia">
-      <h2>História</h2>
-      <p>A CiddApp foi criada para unir o desenvolvimento urbano com o bem-estar social. Hoje, é um exemplo de inovação, sustentabilidade e cidadania digital no Brasil.</p>
-    </section>
-
-    <section id="pontos">
-      <h2>Pontos Turísticos</h2>
-      <ul class="cards">
-        <li class="card">Praça Central</li>
-        <li class="card">Museu Cultural</li>
-        <li class="card">Parque da Vida</li>
-        <li class="card">Centro de Eventos</li>
-      </ul>
-    </section>
-
-    <section id="cultura">
-      <h2>Cultura e Eventos</h2>
-      <p>Festivais, feiras e arte fazem parte do dia a dia da CiddApp. Confira nossa agenda cultural!</p>
-      <button id="ver-eventos" aria-expanded="false" aria-controls="lista-eventos">Ver Próximos Eventos</button>
-      <div id="lista-eventos" class="oculto" hidden>
-        <ul>
-          <li>Festival da Primavera — Setembro</li>
-          <li>Feira de Artesanato — Outubro</li>
-          <li>Festival Gastronômico — Novembro</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="localizacao">
-      <h2>Localização</h2>
-      <p>A CiddApp está situada no coração do Brasil 🌍</p>
-      <address>
-        📍 Avenida Central, 1000 – Centro, CiddApp, BR
-      </address>
-    </section>
-
-    <section id="doacoes">
-      <h2>Doações 💖</h2>
-      <p>Contribua com nossos projetos sociais, educacionais e de saúde.</p>
-      <form id="form-doacao" aria-label="Formulário de doações">
-        <label for="nome-doacao">Nome:</label>
-        <input type="text" id="nome-doacao" name="nome" required autocomplete="name">
-
-        <label for="valor-doacao">Valor (R$):</label>
-        <input type="number" id="valor-doacao" name="valor" min="1" step="0.01" required autocomplete="off">
-
-        <button type="submit">Enviar Doação</button>
-      </form>
-    </section>
-
-    <section id="reclamacoes">
-      <h2>Reclamações 📢</h2>
-      <p>Nos ajude a melhorar! Envie sua reclamação abaixo:</p>
-      <form id="form-reclamacao" aria-label="Formulário de reclamações">
-        <label for="nome-reclamacao">Nome:</label>
-        <input type="text" id="nome-reclamacao" name="nome" required autocomplete="name">
-
-        <label for="mensagem-reclamacao">Mensagem:</label>
-        <textarea id="mensagem-reclamacao" name="mensagem" rows="4" required></textarea>
-
-        <button type="submit">Enviar Reclamação</button>
-      </form>
-    </section>
-
-    <section id="agendamento">
-      <h2>Agendamento Médico 🩺</h2>
-      <p>Agende sua consulta gratuita oferecida pela prefeitura.</p>
-      <form id="form-agendamento" aria-label="Formulário de agendamento médico">
-        <label for="nome-paciente">Nome do Paciente:</label>
-        <input type="text" id="nome-paciente" name="nome" required autocomplete="name">
-
-        <label for="especialidade">Especialidade:</label>
-        <select id="especialidade" name="especialidade" required>
-          <option value="">Selecione</option>
-          <option value="clinico">Clínico Geral</option>
-          <option value="pediatria">Pediatria</option>
-          <option value="odontologia">Odontologia</option>
-          <option value="ginecologia">Ginecologia</option>
-        </select>
-
-        <label for="data">Data:</label>
-        <input type="date" id="data" name="data" required>
-
-        <button type="submit">Agendar Consulta</button>
-      </form>
-    </section>
-
-    <section id="contato">
-      <h2>Contato ☎️</h2>
-      <p><strong>Telefone da Prefeitura:</strong> (11) 4002-8922</p>
-      <p>Atendimento: Segunda a Sexta, das 8h às 18h</p>
-
-      <form id="form-contato" aria-label="Formulário de contato">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required autocomplete="name">
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required autocomplete="email">
-
-        <label for="mensagem">Mensagem:</label>
-        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 <strong>CiddApp</strong> — Todos os direitos reservados.</p>
-  </footer>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cidade Karine - Atendimento ao Cidadão</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <header>
-    <h1>Cidade Karine</h1>
+    <h1>CiddApp</h1>
     <nav>
-      <a href="#" id="btnInicio">Início</a>
-      <a href="#" id="btnAtendimento">Atendimento ao Cidadão</a>
-      <a href="#" id="btnHistorico">Meus Protocolos</a>
+      <a href="login.html">Entrar</a> | <a href="professor.html">Acesso Professor</a>
     </nav>
   </header>
 
-  <main id="conteudo">
-    <section id="inicio" class="ativo">
-      <h2>Bem-vindo(a) à Cidade Karine 💙</h2>
-      <p>Use o sistema abaixo para registrar solicitações, reclamações e sugestões diretamente à prefeitura.</p>
-      <button id="abrirAtendimento" class="botao">Abrir Atendimento</button>
+  <main>
+    <section class="map-section">
+      <h2>Mapa de Ocorrências</h2>
+      <div id="map" style="height: 400px;"></div>
     </section>
 
-    <section id="formulario">
-      <h2>Registrar Atendimento</h2>
-      <form id="formAtendimento">
-        <label>Nome completo:</label>
-        <input type="text" id="nome" required>
-
-        <label>Contato (telefone ou e-mail):</label>
-        <input type="text" id="contato" required>
-
-        <label>Tipo de solicitação:</label>
-        <select id="tipo" required>
-          <option value="">Selecione...</option>
-          <option value="Iluminação Pública">Iluminação Pública</option>
-          <option value="Limpeza Urbana">Limpeza Urbana</option>
-          <option value="Saúde">Saúde</option>
-          <option value="Educação">Educação</option>
-          <option value="Outro">Outro</option>
-        </select>
-
-        <label>Descrição do problema:</label>
-        <textarea id="descricao" rows="5" required></textarea>
-
-        <button type="submit" class="botao">Enviar Solicitação</button>
-        <button type="button" id="voltarInicio" class="botao secundario">Voltar</button>
+    <section class="form-section">
+      <h2>Registrar Ocorrência</h2>
+      <form id="reportForm">
+        <label>Título <input name="title" required /></label>
+        <label>Descrição <textarea name="description" required></textarea></label>
+        <label>Latitude <input name="lat" required /></label>
+        <label>Longitude <input name="lng" required /></label>
+        <label>Foto <input type="file" name="photo" accept="image/*" /></label>
+        <button type="submit">Enviar</button>
       </form>
-    </section>
-
-    <section id="historico">
-      <h2>Meus Protocolos</h2>
-      <div id="listaAtendimentos"></div>
-      <button id="voltarInicio2" class="botao secundario">Voltar</button>
+      <div id="msg"></div>
     </section>
   </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CiddApp - Painel Professor</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main>
+    <h2>Painel do Professor</h2>
+    <div id="welcome"></div>
+    <div id="stats"></div>
+    <button id="logout">Sair</button>
+  </main>
+
+  <script>
+    const token = localStorage.getItem('token');
+    const role = localStorage.getItem('role');
+    document.getElementById('welcome').innerText = 'Olá, ' + (localStorage.getItem('name') || 'Professor');
+
+    if (!token || role !== 'professor') {
+      alert('Acesso restrito a professores. Faça login com uma conta de professor.');
+      window.location.href = '/login.html';
+    } else {
+      fetch('http://localhost:4000/api/reports/report/pdf', {
+        headers: { 'Authorization': 'Bearer ' + token }
+      }).then(r => r.json()).then(data => {
+        document.getElementById('stats').innerText = 'Total de ocorrências: ' + data.total + '\nStatus: ' + JSON.stringify(data.byStatus);
+      }).catch(err => {
+        document.getElementById('stats').innerText = 'Erro ao obter relatórios';
+      });
+    }
+
+    document.getElementById('logout').addEventListener('click', () => {
+      localStorage.clear();
+      window.location.href = '/login.html';
+    });
+  </script>
+</body>
+</html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CiddApp - Login</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="center">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label>Email <input type="email" name="email" required /></label>
+      <label>Senha <input type="password" name="password" required /></label>
+      <button type="submit">Entrar</button>
+    </form>
+    <div id="msg"></div>
+  </main>
+  <script>
+    const api = 'http://localhost:4000/api/auth/login';
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const f = e.target;
+      const body = { email: f.email.value, password: f.password.value };
+      const res = await fetch(api, { method: 'POST', headers: { 'Content-Type':'application/json' }, body: JSON.stringify(body) });
+      const data = await res.json();
+      if (res.ok) {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('role', data.role);
+        localStorage.setItem('name', data.name);
+        alert('Login realizado!');
+        window.location.href = '/index.html';
+      } else {
+        document.getElementById('msg').innerText = data.message || JSON.stringify(data);
+      }
+    });
+  </script>
+</body>
+</html>
